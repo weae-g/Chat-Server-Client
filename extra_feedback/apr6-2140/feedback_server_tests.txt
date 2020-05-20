@@ -1,0 +1,14 @@
+....F.....
+======================================================================
+FAIL: test_long_msg (__main__.TestBufServer)
+Client sends excessively long message
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 149, in test_long_msg
+    self.assertTrue(cstatus == 0, "If your server behaved as required, our test client will terminate with exit status 0.")
+AssertionError: False is not true : If your server behaved as required, our test client will terminate with exit status 0.
+
+----------------------------------------------------------------------
+Ran 10 tests in 4.487s
+
+FAILED (failures=1)

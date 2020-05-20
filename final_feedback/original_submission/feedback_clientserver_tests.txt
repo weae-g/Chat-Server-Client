@@ -1,0 +1,50 @@
+
+======================================================================
+FAIL: test_splitting_messages (__main__.TestBufServer) [Client 2 should receive and correctly print first part of the split message from client 1]
+Two clients connect to server and send messages to each other
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "clientserver_test.py", line 153, in test_splitting_messages
+    self.assertIn(b'user1: ' + b'0123456789ABCDEF'*8 + b'\n', c2out)
+AssertionError: b'user1: 0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF\n' not found in b'Please enter a username: '
+
+======================================================================
+FAIL: test_splitting_messages (__main__.TestBufServer) [Client 2 should receive and correctly print second part of the split message from client 1]
+Two clients connect to server and send messages to each other
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "clientserver_test.py", line 156, in test_splitting_messages
+    self.assertIn(b'user1: ' + b'0123456789ABCDEF' + b'\n', c2out)
+AssertionError: b'user1: 0123456789ABCDEF\n' not found in b'Please enter a username: '
+
+======================================================================
+FAIL: test_two_clients (__main__.TestBufServer) [Client process should not unexpectedly terminate before entire test input was written to stdin]
+Two clients connect to server and send messages to each other
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "clientserver_test.py", line 79, in test_two_clients
+    self.assertTrue(client_input_complete)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_two_clients (__main__.TestBufServer) [Client 2 should receive message from client 1]
+Two clients connect to server and send messages to each other
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "clientserver_test.py", line 85, in test_two_clients
+    self.assertIn(b'test message 1', c2out)
+AssertionError: b'test message 1' not found in b'Please enter a username: '
+
+======================================================================
+FAIL: test_two_clients (__main__.TestBufServer) [Client 1 should receive message from client 2]
+Two clients connect to server and send messages to each other
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "clientserver_test.py", line 88, in test_two_clients
+    self.assertIn(b'test message 2', c1out)
+AssertionError: b'test message 2' not found in b'Please enter a username: '
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.226s
+
+FAILED (failures=5)

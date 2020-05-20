@@ -1,0 +1,9 @@
+=== make output (start) ===
+gcc -DSERVER_PORT=30235 -g -Wall -Werror -fsanitize=address -c chat_server.c
+gcc -DSERVER_PORT=30235 -g -Wall -Werror -fsanitize=address -c socket.c
+gcc -DSERVER_PORT=30235 -g -Wall -Werror -fsanitize=address -c chat_helpers.c
+gcc -DSERVER_PORT=30235 -g -Wall -Werror -fsanitize=address -o chat_server chat_server.o socket.o chat_helpers.o
+gcc -DSERVER_PORT=30235 -g -Wall -Werror -fsanitize=address -c chat_client.c
+gcc -DSERVER_PORT=30235 -g -Wall -Werror -fsanitize=address -o chat_client chat_client.o socket.o
+=== make output (end) ===
+=== checking some basic requirements ===

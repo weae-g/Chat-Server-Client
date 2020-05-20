@@ -1,0 +1,32 @@
+F...FF
+======================================================================
+FAIL: test_client_decodeemote (__main__.TestBufServer)
+Test if client correctly decodes and displays emote.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_test.py", line 227, in test_client_decodeemote
+    self.assertTrue(image_displayed)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_two_clients (__main__.TestBufServer)
+Two clients connect to server and send messages to each other
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_test.py", line 66, in test_two_clients
+    self.assertIn(b'test message 1', c2out, "Ensure that client 2 received message from client 1")
+AssertionError: b'test message 1' not found in b'Please enter a username: ' : Ensure that client 2 received message from client 1
+
+======================================================================
+FAIL: test_two_clients_format (__main__.TestBufServer)
+Two clients connect to server and send messages to each other.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_test.py", line 119, in test_two_clients_format
+    self.assertIn(b'user1: test message 1\n', c2out, "Ensure that client 2 prints message received from client 1 in correct format")
+AssertionError: b'user1: test message 1\n' not found in b'Please enter a username: ' : Ensure that client 2 prints message received from client 1 in correct format
+
+----------------------------------------------------------------------
+Ran 6 tests in 3.257s
+
+FAILED (failures=3)
