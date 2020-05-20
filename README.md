@@ -25,10 +25,7 @@ Currently the code only runs locally on one machine. This can simply be improved
 Additionally, there are many more features that can added like 'status', 'profile picture', 'availability status', etc. These features were out of scope for this project currently. 
 
 # License Information
-The MIT License (MIT)
 
 Copyright © 2020 akshitgoyal - All Copy Rights Are Reserved.
-
-You can find a copy of the License at https://mit-license.org/
 
 Some small chunk of the code has been provided to me as starter code by the instructors of CSC209 Winter 2020 at the University of Toronto Mississauga. They hold the complete right over that part of the code and one needs a permission from them to use it. 
