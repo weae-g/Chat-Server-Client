@@ -16,7 +16,7 @@ In order to send a `normal message`, a client can simply type the message in the
 In order to send an `emoticon`, one needs to send the message in the following format: `.e name-of-emote`. For example, `.e lul` will be sent as described in the picture below. 
 Note: Only the emote images present in the `emotes` folder will be sent.
 
-[Imgur](https://i.imgur.com/a2wuOWU.png)
+![Imgur](https://i.imgur.com/a2wuOWU.png)
 
 
 In order to kick a user, one needs to send the message in the following format: `.k username`. Only `admin` has the privilege to kick any user. Admin is the first ever client connected to the server. In case, the admin decides to kick itself, then the user who joined after admi, becomes the new admin. Any kick command from a non-admin user will simply be ignored.
