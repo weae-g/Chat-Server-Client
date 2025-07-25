@@ -1,34 +1,33 @@
 # Chat-Server-Client
-A C based chat server and client.
+Чат-сервер и клиент, написанные на языке C.
 
-There are two sides of the code. One is the chat `server` side and the other is `client` side which connects to the chat server. Multiple clients can connect to the same server. There are multiple features to the chat application like admin, kicking user, sending emoticons, etc. 
+Программа состоит из двух частей: `сервер` чата и `клиент`, который подключается к серверу чата. Несколько клиентов могут подключаться к одному серверу. У приложения чата есть множество функций, таких как администратор, возможность исключения пользователей, отправка эмодзи и другие.
 
-# How to install the chat application
-Clone the git repository. After cloning, open two terminal windows(in Mac) or Cmd Prompt(in Windows). In any one of them, compile the code simply by calling `make`. Once the code is compiled, the chat server and client is setup. 
+# Как установить приложение чата
+Клонируйте репозиторий Git. После клонирования откройте два окна терминала (на Mac) или командной строки (на Windows). В одном из них скомпилируйте код, просто вызвав команду `make`. После компиляции код сервера и клиента чата будет готов к работе.
 
-Now before running the client, we need to setup the server. This can simply be done by calling `./chat_server` in one of the terminal window. One the server is setup, clients can now connect to the server and start chatting. Again, this can be done by calling `./chat_client` in the command line.
+Перед запуском клиента необходимо настроить сервер. Это можно сделать, вызвав команду `./chat_server` в одном из окон терминала. После настройки сервера клиенты могут подключаться к серверу и начинать общение. Для этого нужно выполнить команду `./chat_client` в командной строке.
 
-# How to use the chat application
-Once both the chat server and various clients are setup, we can start chatting. 
+# Как использовать приложение чата
+После настройки сервера чата и подключения клиентов можно начинать общение.
 
-In order to send a `normal message`, a client can simply type the message in the terminal and send it. On the backend, the server will`receive` the message and `echo` it to all the clients connected to the server. 
+Чтобы отправить `обычное сообщение`, клиент может просто ввести сообщение в терминале и отправить его. На сервере сообщение будет `получено` и `отправлено` всем клиентам, подключенным к серверу.
 
-In order to send an `emoticon`, one needs to send the message in the following format: `.e name-of-emote`. For example, `.e lul` will be sent as described in the picture below. 
-Note: Only the emote images present in the `emotes` folder will be sent.
+Чтобы отправить `эмодзи`, необходимо отправить сообщение в следующем формате: `.e имя-эмодзи`. Например, `.e lul` будет отправлено, как показано на изображении ниже.
+Примечание: Только изображения эмодзи, находящиеся в папке `emotes`, будут отправлены.
 
 ![Imgur](https://i.imgur.com/a2wuOWU.png)
 
+Чтобы исключить пользователя, необходимо отправить сообщение в следующем формате: `.k имя-пользователя`. Только `администратор` имеет право исключать пользователей. Администратором становится первый клиент, подключившийся к серверу. Если администратор решит исключить себя, то следующим администратором станет пользователь, подключившийся после него. Любая команда исключения от пользователя, не являющегося администратором, будет проигнорирована.
+Пример использования команды исключения можно увидеть на изображении выше.
 
-In order to kick a user, one needs to send the message in the following format: `.k username`. Only `admin` has the privilege to kick any user. Admin is the first ever client connected to the server. In case, the admin decides to kick itself, then the user who joined after admi, becomes the new admin. Any kick command from a non-admin user will simply be ignored.
-A sample usage of the kick command can be seen in the picture above. 
+# Расширение функционала
+В настоящее время код работает только локально на одном компьютере. Это можно улучшить, позволив клиенту указывать `порт` и `адрес хоста` в командной строке. Это можно изменить в файле `chat_client.c`.
 
-# Extend the code
-Currently the code only runs locally on one machine. This can simply be improved by allowing client to specify `port` and `host address` in the command line.  This can be edited in `chat_client.c`. 
+Кроме того, можно добавить множество других функций, таких как "статус", "фотография профиля", "статус доступности" и другие. Эти функции пока не входят в рамки данного проекта.
 
-Additionally, there are many more features that can added like 'status', 'profile picture', 'availability status', etc. These features were out of scope for this project currently. 
+# Лицензионная информация
 
-# License Information
+Copyright © 2020 akshitgoyal - Все права защищены.
 
-Copyright © 2020 akshitgoyal - All Copy Rights Are Reserved.
-
-Some small chunk of the code has been provided to me as starter code by the instructors of CSC209 Winter 2020 at the University of Toronto Mississauga. They hold the complete right over that part of the code and one needs a permission from them to use it. 
+Некоторые небольшие части кода были предоставлены мне в качестве стартового материала преподавателями курса CSC209 Winter 2020 в Университете Торонто в Миссиссоге. Они обладают полными правами на эту часть кода, и для её использования требуется их разрешение.
